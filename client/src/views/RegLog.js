@@ -11,7 +11,7 @@ export default function Login() {
     const handleSubmit = e =>{
         e.preventDefault();
         setErr('');
-        axios.post('http://localhost:8000/user/login', {
+        axios.post('http://localhost:8000/api/user/login', {
             email,
             password
         }, { withCredentials: true })

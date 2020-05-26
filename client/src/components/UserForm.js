@@ -21,7 +21,7 @@ export default () => {
 
     const handleSubmit= (e) => {
         e.preventDefault();
-        axios.post('http://localhost:8000/user', user, { withCredentials:true })
+        axios.post('http://localhost:8000/api/user', user, { withCredentials:true })
             .then(()=> navigate('/pirates'))
             .catch(console.log)
     }

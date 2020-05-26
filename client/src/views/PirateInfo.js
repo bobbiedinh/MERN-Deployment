@@ -5,7 +5,7 @@ export default ({id}) => {
     const [pirate, setPirate] = useState(null);
 
     useEffect(() => {
-        axios.get('http://localhost:8000/pirate/' + id)
+        axios.get('http://localhost:8000/api/pirate/' + id)
         .then(res => setPirate(res.data));
     }, [id]);
 

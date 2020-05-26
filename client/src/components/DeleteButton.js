@@ -13,7 +13,7 @@ export default ({id, remove}) =>{
                 {
                     label: 'Walk the Plank',
                     onClick: () => {
-                        axios.delete('http://localhost:8000/pirate/'+id)
+                        axios.delete('http://localhost:8000/api/pirate/'+id)
                             .then(()=> remove(id))
                         }
                 },

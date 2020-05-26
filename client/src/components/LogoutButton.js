@@ -4,7 +4,7 @@ import { navigate } from '@reach/router';
 
 export default () => {
     const handleClick= e => {
-        axios.delete('http://localhost:8000/user/logout', { withCredentials:true})
+        axios.delete('http://localhost:8000/api/user/logout', { withCredentials:true})
             .then(() => navigate('/'))
             .catch(console.log);
     }

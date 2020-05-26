@@ -1,7 +1,7 @@
 const UserCtl = require('../controllers/user.controller');
 
 module.exports = function(app){
-    app.post('/user', UserCtl.register);
-    app.post('/user/login', UserCtl.login);
-    app.delete('/user/logout', UserCtl.logout);
+    app.post('/api/user', UserCtl.register);
+    app.post('/api/user/login', UserCtl.login);
+    app.delete('/api/user/logout', UserCtl.logout);
 }

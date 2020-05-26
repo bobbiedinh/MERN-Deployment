@@ -7,7 +7,7 @@ export default props =>{
     const [loaded, setLoaded] = useState(false);
 
     useEffect(()=>{
-        axios.get('http://localhost:8000', {
+        axios.get('http://localhost:8000/api', {
             withCredentials:true
         })
             .then(res=>{
