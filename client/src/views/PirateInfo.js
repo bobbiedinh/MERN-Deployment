@@ -6,7 +6,7 @@ export default ({id}) => {
 
     useEffect(() => {
         axios.get('http://localhost:8000/api/pirate/' + id)
-        .then(res => setPirate(res.data));
+        .then(res => setPirate(res.data))
     }, [id]);
 
     if(pirate === null) return 'Loading...';
@@ -22,9 +22,9 @@ export default ({id}) => {
             <h2>About</h2>
             <p>Position: {pirate.position}</p>
             <p>Treasures: {pirate.treasure}</p>
-            <p>Peg Leg: {pirate.peg ? 'Yes' : 'No'}</p>
-            <p>Eye Patch: {pirate.eye ? 'Yes' : 'No'}</p>
-            <p>Hook Hand: {pirate.hook ? 'Yes' : 'No'}</p>
+            <p>Peg Leg: {pirate.desc.peg ? 'Yes' : 'No'}</p>
+            <p>Eye Patch: {pirate.desc.eye ? 'Yes' : 'No'}</p>
+            <p>Hook Hand: {pirate.desc.hook ? 'Yes' : 'No'}</p>
         </div>
     </div>
     )

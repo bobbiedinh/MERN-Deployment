@@ -11,17 +11,16 @@ export default ({pirate, method, url}) =>{
     const [eye, setEye] = useState(pirate.desc.eye);
     const [hook, setHook] = useState(pirate.desc.hook);
     const [peg, setPeg] = useState(pirate.desc.peg);
-    const [desc, setDesc] = useState({
-        "eye":eye,
-        "hook":hook,
-        "peg":peg
-    });
-
     const [errors, setErrors] = useState([]);
 
     const onSubmit=e=>{
         e.preventDefault();
         setErrors([]);
+        const desc = {
+            "eye":eye,
+            "hook":hook,
+            "peg":peg
+        }
         axios[method](url, {
             name,
             treasure,
@@ -40,7 +39,7 @@ export default ({pirate, method, url}) =>{
                     errorArr.push(errorObj[key].properties.message);
                 }
                 setErrors(errorArr);
-            });
+            },[]);
     }
 
     return(
@@ -75,11 +74,11 @@ export default ({pirate, method, url}) =>{
                     </select>
                 </p>
                 <p>
-                    <input type="checkbox" value={!peg} checked={peg} onChange={e=>{setPeg(e.target.value)}}/>
+                    <input type="checkbox"  value={!peg} checked={peg} onChange={e=>{setPeg(e.target.value)}}/>
                     <label>Peg Leg</label>
-                    <input type="checkbox" value={!eye} checked={eye} onChange={e=>{setEye(e.target.value)}}/>
+                    <input type="checkbox"  value={!eye} checked={eye} onChange={e=>{setEye(e.target.value)}}/>
                     <label>Eye Patch</label>
-                    <input type="checkbox" value={!hook} checked={hook} onChange={e=>{setHook(e.target.value)}}/>
+                    <input type="checkbox"  value={!hook} checked={hook} onChange={e=>{setHook(e.target.value)}}/>
                     <label>Hook Hand</label>
                 </p>
                 <button type='submit'>Add Pirate</button>
