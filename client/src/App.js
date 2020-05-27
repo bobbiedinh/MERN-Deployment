@@ -13,7 +13,7 @@ function App() {
       <LogOutButton/>
       <Router>
         <RegLog path="/"/>
-        <Dashboard path="/pirates"/>
+        <Dashboard path="pirates"/>
         <CreatePirate path="pirate/new"/>
         <PirateInfo path="pirate/:id"/>
       </Router>

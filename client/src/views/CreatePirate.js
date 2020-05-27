@@ -22,7 +22,7 @@ export default props =>{
                 <h3>Add Pirate</h3>
                 <button onClick={e => navigate('/pirates')}>Crew Board</button>
             </div>
-            <PirateForm pirate={newPirate} method="post" url="http://localhost:8000/new"/>
+            <PirateForm pirate={newPirate} method="post" url="http://localhost:8000/api/new"/>
         </div>
     )
 }

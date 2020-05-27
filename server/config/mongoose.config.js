@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect("mongodb://localhost/exam", {
+mongoose.connect("mongodb://localhost/MERN-deployment", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: true,
